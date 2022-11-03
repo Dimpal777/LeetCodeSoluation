@@ -110,13 +110,12 @@ class Solution
     public static void removeLoop(Node head){
         // code here
         // remove the loop without losing any nodes
-        
-        
-        Set<Node> set=new HashSet<>();//cheack the easy loop
+   
+        Set<Node> set=new HashSet<>();
         Node prev=null;
-        Node current=head;
+        Node current =head;
         
-        while(current!=null){
+        while(current !=null){
             if(set.contains(current)){
                 prev.next=null;
                 return;
@@ -125,6 +124,9 @@ class Solution
             prev=current;
             current=current.next;
         }
+        
+        
+        
         
     }
 }
