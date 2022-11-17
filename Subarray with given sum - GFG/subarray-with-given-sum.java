@@ -43,18 +43,18 @@ class Solution
     {
         // Your code here
         
-       int sum=0,start=0,end=0;
+       int sum=0,right=0,left=0;
         ArrayList<Integer> num=new ArrayList<Integer>();
         
         for(int i=0;i<n;i++)
         {
             sum+=arr[i];
-            end=i;
+            left=i;
             
             while(sum>s)
             {
-                sum-=arr[start];
-                start++;
+                sum-=arr[right];
+                right++;
             }
             
             if(sum==s)
@@ -63,15 +63,15 @@ class Solution
             }
         }
         
-        if(sum!=s || start>end)
+        if(sum!=s || right>left)
         {
           num.add(-1);
           return num;
         }
         else
         {
-            num.add(start+1);
-            num.add(end+1);
+            num.add(right+1);
+            num.add(left+1);
             return num;
         }
     }
