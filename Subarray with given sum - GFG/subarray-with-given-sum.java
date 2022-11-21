@@ -42,19 +42,18 @@ class Solution
     static ArrayList<Integer> subarraySum(int[] arr, int n, int s) 
     {
         // Your code here
-        
-       int sum=0,right=0,left=0;
+        int sum=0,start=0,end=0;
         ArrayList<Integer> num=new ArrayList<Integer>();
         
         for(int i=0;i<n;i++)
         {
             sum+=arr[i];
-            left=i;
+            end=i;
             
             while(sum>s)
             {
-                sum-=arr[right];
-                right++;
+                sum-=arr[start];
+                start++;
             }
             
             if(sum==s)
@@ -63,18 +62,57 @@ class Solution
             }
         }
         
-        if(sum!=s || right>left)
+        if(sum!=s || start>end)
         {
           num.add(-1);
           return num;
         }
         else
         {
-            num.add(right+1);
-            num.add(left+1);
+            num.add(start+1);
+            num.add(end+1);
             return num;
         }
     }
        
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
