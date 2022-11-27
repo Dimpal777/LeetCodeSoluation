@@ -26,24 +26,17 @@ this function*/
 // x: element to find square root
 class Solution
 {
-     
-	 
-	// Your code here
-		long floorSqrt(long x)
-
-  {
-
- // Your code here
-
- long ans=0;
- for(int i=1;i*i<=x;i++){
-     ans=i;
- }
-  
- return ans;
-
-  }
-
-}
+     long floorSqrt(long x)
+	 {
+		// Your code here
 		
-	 
+		long ans=0;
+		long start=1;// i consider a first and sec pointer 
+		long end=x;
+		
+		for(int i=1;i*i<=x;i++){//then 
+		    ans=i;
+		}
+		return ans;
+	 }
+}
